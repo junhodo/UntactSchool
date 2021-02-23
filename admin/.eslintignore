@@ -1,0 +1,6 @@
+# eslint에서 제외할 목록들! React 및 프로젝트와 직접 관련없는 파일들.
+# serviceWorker가 버전이 바뀌며 reportWebVitals로 이름이 바뀐듯 하다.
+
+/node_modules/*
+src/reportWebVitals.js
+src/*.test.js
