@@ -1,10 +1,21 @@
 import React from 'react';
+import Header from './component/Header';
+import Notification from './component/Notification';
+import Report from './component/Report';
+import PersonInfo from './component/PersonInfo';
+import GroupInfo from './component/GroupInfo';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <p>this is App</p>
+      <Header />
+      <div className="content">
+        <Notification />
+        <Report />
+        <PersonInfo />
+        <GroupInfo />
+      </div>
     </div>
   );
 }
