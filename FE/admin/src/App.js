@@ -1,20 +1,22 @@
 import React from 'react';
+// import Notification from './component/Notification';
+// import Report from './component/Report';
+// import PersonInfo from './component/PersonInfo';
+// import GroupInfo from './component/GroupInfo';
 import Header from './component/Header';
-import Notification from './component/Notification';
-import Report from './component/Report';
-import PersonInfo from './component/PersonInfo';
-import GroupInfo from './component/GroupInfo';
+import Login from './component/Login';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <Header />
+      <Login />
       <div className="Content">
-        <Notification />
+        {/* <Notification />
         <Report />
         <PersonInfo />
-        <GroupInfo />
+        <GroupInfo /> */}
       </div>
     </div>
   );
