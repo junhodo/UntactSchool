@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Route, Switch } from 'react-router-dom';
 import Header from './component/shared/Header/Header';
 
 function App() {
@@ -8,6 +8,11 @@ function App() {
     <div className="App">
       <p>this is App</p>
       <Header />
+      <Switch>
+        <Route exact path="/" />
+        <Route path="/group" />
+        <Route path="/my" />
+      </Switch>
     </div>
   );
 }
