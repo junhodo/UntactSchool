@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 15%;
+  padding-right: 15%;
+  font-size: large;
+  height: 64px;
+  align-items: center;
+  background-color: #D1DFE8;
+  font-family: Sans-Serif;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.header img {
+  width: 64px;
+  height: 64px;
+}

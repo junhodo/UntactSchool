@@ -1,0 +1,7 @@
+.notificationContent {
+  margin: 4px;
+  margin-top: 0;
+  padding: 8px;
+  border-top: 1px solid black;
+  display: none;
+}
