@@ -1,29 +1,100 @@
 import React from 'react';
 import '../css/Notification.css';
-import { Toast, ToastBody, ToastHeader } from 'reactstrap';
+import { Toast, ToastHeader } from 'reactstrap';
 
 const Notification = () => {
+  //  title  sender  time
+  const dummy = [
+    {
+      title: '정기정검 공지',
+      sender: 'GM길무',
+      time: '2021-02-24 : 21:15'
+    },
+    {
+      title: '정기정검 공지',
+      sender: 'GM길무',
+      time: '2021-02-24 : 21:15'
+    },
+    {
+      title: '정기정검 공지',
+      sender: 'GM길무',
+      time: '2021-02-24 : 21:15'
+    },
+    {
+      title: '정기정검 공지',
+      sender: 'GM길무',
+      time: '2021-02-24 : 21:15'
+    },
+    {
+      title: '정기정검 공지',
+      sender: 'GM길무',
+      time: '2021-02-24 : 21:15'
+    },
+    {
+      title: '정기정검 공지',
+      sender: 'GM길무',
+      time: '2021-02-24 : 21:15'
+    },
+    {
+      title: '정기정검 공지',
+      sender: 'GM길무',
+      time: '2021-02-24 : 21:15'
+    },
+    {
+      title: '정기정검 공지',
+      sender: 'GM길무',
+      time: '2021-02-24 : 21:15'
+    },
+    {
+      title: '정기정검 공지',
+      sender: 'GM길무',
+      time: '2021-02-24 : 21:15'
+    },
+    {
+      title: '정기정검 공지',
+      sender: 'GM길무',
+      time: '2021-02-24 : 21:15'
+    },
+    {
+      title: '정기정검 공지',
+      sender: 'GM길무',
+      time: '2021-02-24 : 21:15'
+    },
+    {
+      title: '정기정검 공지',
+      sender: 'GM길무',
+      time: '2021-02-24 : 21:15'
+    },
+    {
+      title: '정기정검 공지',
+      sender: 'GM길무',
+      time: '2021-02-24 : 21:15'
+    },
+    {
+      title: '정기정검 공지',
+      sender: 'GM길무',
+      time: '2021-02-24 : 21:15'
+    },
+    {
+      title: '정기정검 공지',
+      sender: 'GM길무',
+      time: '2021-02-24 : 21:15'
+    }
+  ];
+
+  const items = dummy.map(item => (
+    <Toast>
+      <ToastHeader>{item.title}</ToastHeader>
+      <div className="itemContent">
+        <span>{item.sender}</span>
+        <span>{item.time}</span>
+      </div>
+    </Toast>
+  ));
   return (
     <div className="Box">
       <h4>알림</h4>
-      <Toast>
-        <ToastHeader icon="">공지사항</ToastHeader>
-        <ToastBody>
-          This is a toast with a primary icon — check it out!
-        </ToastBody>
-      </Toast>
-      <Toast>
-        <ToastHeader icon="secondary">공지사항</ToastHeader>
-        <ToastBody>
-          This is a toast with a secondary icon — check it out!
-        </ToastBody>
-      </Toast>
-      <Toast>
-        <ToastHeader icon="success">공지사항</ToastHeader>
-        <ToastBody>
-          This is a toast with a success icon — check it out!
-        </ToastBody>
-      </Toast>
+      <div className="ItemBox">{items}</div>
     </div>
   );
 };

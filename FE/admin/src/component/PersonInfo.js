@@ -1,23 +1,104 @@
 import React from 'react';
-import '../css/PersonInfo.css';
-import { Toast, ToastBody, ToastHeader } from 'reactstrap';
+import '../css/Notification.css';
+import { Toast, ToastHeader } from 'reactstrap';
 
 const PersonInfo = () => {
+  // nickname    userid    name    join
+  const dummy = [
+    {
+      nickname: '길무짱',
+      userid: 'alsanrlf',
+      name: '민무길',
+      join: '2021-02-24'
+    },
+    {
+      nickname: '길무짱',
+      userid: 'alsanrlf',
+      name: '민무길',
+      join: '2021-02-24'
+    },
+    {
+      nickname: '길무짱',
+      userid: 'alsanrlf',
+      name: '민무길',
+      join: '2021-02-24'
+    },
+    {
+      nickname: '길무짱',
+      userid: 'alsanrlf',
+      name: '민무길',
+      join: '2021-02-24'
+    },
+    {
+      nickname: '길무짱',
+      userid: 'alsanrlf',
+      name: '민무길',
+      join: '2021-02-24'
+    },
+    {
+      nickname: '길무짱',
+      userid: 'alsanrlf',
+      name: '민무길',
+      join: '2021-02-24'
+    },
+    {
+      nickname: '길무짱',
+      userid: 'alsanrlf',
+      name: '민무길',
+      join: '2021-02-24'
+    },
+    {
+      nickname: '길무짱',
+      userid: 'alsanrlf',
+      name: '민무길',
+      join: '2021-02-24'
+    },
+    {
+      nickname: '길무짱',
+      userid: 'alsanrlf',
+      name: '민무길',
+      join: '2021-02-24'
+    },
+    {
+      nickname: '길무짱',
+      userid: 'alsanrlf',
+      name: '민무길',
+      join: '2021-02-24'
+    },
+    {
+      nickname: '길무짱',
+      userid: 'alsanrlf',
+      name: '민무길',
+      join: '2021-02-24'
+    },
+    {
+      nickname: '길무짱',
+      userid: 'alsanrlf',
+      name: '민무길',
+      join: '2021-02-24'
+    },
+    {
+      nickname: '길무짱',
+      userid: 'alsanrlf',
+      name: '민무길',
+      join: '2021-02-24'
+    }
+  ];
+
+  const items = dummy.map(item => (
+    <Toast>
+      <ToastHeader>{item.nickname}</ToastHeader>
+      <div className="itemContent">
+        <span>{item.userid}</span>
+        <span>{item.name}</span>
+        <span>{item.join}</span>
+      </div>
+    </Toast>
+  ));
   return (
     <div className="Box">
-      <h4>가입자 정보</h4>
-      <Toast>
-        <ToastHeader icon="">민무길</ToastHeader>
-        <ToastBody>가입일자 : 21년 2월 23일</ToastBody>
-      </Toast>
-      <Toast>
-        <ToastHeader icon="secondary">이지훈</ToastHeader>
-        <ToastBody>가입일자 : 21년 2월 22일</ToastBody>
-      </Toast>
-      <Toast>
-        <ToastHeader icon="success">김정환</ToastHeader>
-        <ToastBody>가입일자 : 21년 1월 1일</ToastBody>
-      </Toast>{' '}
+      <h4>회원 정보</h4>
+      <div className="ItemBox">{items}</div>
     </div>
   );
 };
