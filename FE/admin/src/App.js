@@ -1,23 +1,14 @@
 import React from 'react';
-// import Notification from './component/Notification';
-// import Report from './component/Report';
-// import PersonInfo from './component/PersonInfo';
-// import GroupInfo from './component/GroupInfo';
-import Header from './component/Header';
-import Login from './component/Login';
+import { Route } from 'react-router-dom';
+import LoginPage from './router/LoginPage';
+import MainPage from './router/MainPage';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Login />
-      <div className="Content">
-        {/* <Notification />
-        <Report />
-        <PersonInfo />
-        <GroupInfo /> */}
-      </div>
+      <Route path="/" component={LoginPage} exact />
+      <Route path="/admin" component={MainPage} />
     </div>
   );
 }

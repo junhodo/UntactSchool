@@ -1,5 +1,6 @@
 import React from 'react';
 import '../css/Login.css';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   return (
@@ -20,8 +21,9 @@ const Login = () => {
           required
           className="authInput"
         />
-
-        <input className="authInput authSubmit" type="submit" />
+        <Link to="/admin">
+          <input className="authInput authSubmit" type="submit" />
+        </Link>
       </form>
     </div>
   );

@@ -1,5 +1,4 @@
 import React from 'react';
-import '../css/GroupInfo.css';
 import { Toast, ToastHeader } from 'reactstrap';
 
 const GroupInfo = () => {
