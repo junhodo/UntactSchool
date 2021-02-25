@@ -8,3 +8,26 @@
   color: pink;
   text-decoration: none;
 }
+.rightDiv {
+  display: flex;
+}
+.iconWraper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 75px;
+  margin: 0 15px 0 15px;
+  padding-bottom: 1%;
+  height: 80px;
+}
+.iconWraper > img {
+  margin-right: 15px;
+  margin-left: 15px;
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.menuText {
+  font-size: 2rem;
+}
