@@ -10,7 +10,7 @@ function Header() {
   return (
     <div className="Header">
       <Navbar bg="dark" expand="lg" className="justify-content-between no-wrap">
-        <Col className="headerCol">
+        <Col className="headerCol1">
           <Nav>
             <Nav.Link className="text-white">
               <Link to="/group">
@@ -25,14 +25,14 @@ function Header() {
             </Nav.Link>
           </Nav>
         </Col>
-        <Col className="headerCol">
+        <Col className="headerCol2">
           <NavbarBrand className="text-white center-block">
             <Link exact to="/">
               <h1>Clean Study</h1>
             </Link>
           </NavbarBrand>
         </Col>
-        <Col className="headerCol ">
+        <Col className="headerCol3">
           <HeaderRightDiv />
         </Col>
       </Navbar>
