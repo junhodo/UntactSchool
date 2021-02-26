@@ -8,7 +8,7 @@
   color: pink;
   text-decoration: none;
 }
-.rightDiv {
+.rightDiv > .HeaderRightDiv {
   display: flex;
 }
 .iconWraper {

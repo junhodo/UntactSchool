@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Nav, Navbar, NavbarBrand } from 'react-bootstrap';
 import '../../../css/Header.css';
-import searchIcon from '../../../static/image/search.png';
-import userIcon from '../../../static/image/user.png';
+
 import Vl from './Vl';
+import HeaderRightDiv from './HeaderRightDiv';
 
 function Header() {
   return (
@@ -29,16 +29,7 @@ function Header() {
           </Link>
         </NavbarBrand>
         <div className="rightDiv">
-          <Link to="/">
-            <div className="iconWraper">
-              <img src={searchIcon} alt="search" />
-            </div>
-          </Link>
-          <Link to="/">
-            <div className="iconWraper">
-              <img src={userIcon} alt="user" />
-            </div>
-          </Link>
+          <HeaderRightDiv />
         </div>
       </Navbar>
     </div>
