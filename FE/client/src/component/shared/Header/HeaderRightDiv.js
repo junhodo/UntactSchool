@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import searchIcon from '../../../static/image/search.png';
 import userIcon from '../../../static/image/user.png';
 import SearchBar from './SearchBar';
+import '../../../css/HeaderRightDiv.css';
 
 const HeaderRightDiv = () => {
   const [showSearchBar, setShowSearchBar] = useState(false);
@@ -11,7 +12,7 @@ const HeaderRightDiv = () => {
   };
   let searchBar;
   if (showSearchBar) {
-    searchBar = <SearchBar />;
+    searchBar = <SearchBar className="searchBar" />;
   } else {
     searchBar = '';
   }
