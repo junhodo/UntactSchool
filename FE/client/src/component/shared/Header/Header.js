@@ -4,6 +4,7 @@ import { Nav, Navbar, NavbarBrand } from 'react-bootstrap';
 import '../../../css/Header.css';
 import searchIcon from '../../../static/image/search.png';
 import userIcon from '../../../static/image/user.png';
+import Vl from './Vl';
 
 function Header() {
   return (
@@ -15,6 +16,7 @@ function Header() {
               <p className="menuText">Group</p>
             </Link>
           </Nav.Link>
+          <Vl />
           <Nav.Link className="text-white">
             <Link to="/my">
               <p className="menuText">My</p>
