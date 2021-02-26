@@ -1,7 +1,14 @@
 .notificationContent {
   margin: 4px;
   margin-top: 0;
-  padding: 8px;
+  padding: 2px;
+  padding-right: 6px;
   border-top: 1px solid black;
-  display: none;
+  visibility: visible
+}
+
+.notificationContentHidden {
+  visibility: hidden;
+  max-height: 0px;
+
 }

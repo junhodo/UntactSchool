@@ -3,8 +3,7 @@ import '../css/Notification.css';
 import { Toast, ToastHeader } from 'reactstrap';
 
 const Notification = () => {
-  const [editing, setEditing] = useState(false);
-
+  const [willShow, setWillShow] = useState(0);
   //  title  sender  time  content  id
   const dummy = [
     {
@@ -54,16 +53,30 @@ const Notification = () => {
       content:
         '안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.',
       id: '6'
+    },
+    {
+      title: '정기정검 공지',
+      sender: 'GM길무',
+      time: '2021-02-24 : 21:15',
+      content:
+        '안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.',
+      id: '7'
+    },
+    {
+      title: '정기정검 공지',
+      sender: 'GM길무',
+      time: '2021-02-24 : 21:15',
+      content:
+        '안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.',
+      id: '8'
     }
   ];
 
   const notificationClick = event => {
     event.preventDefault();
-    setEditing(prev => !prev);
-    const activeNote = event.target.parentNode;
-    console.log(activeNote);
-    if (editing) {
-      console.log({ activeNote });
+    setWillShow(event.currentTarget.id);
+    if (event.currentTarget.id === willShow) {
+      setWillShow(0);
     }
   };
 
@@ -74,7 +87,14 @@ const Notification = () => {
         <span>{item.sender}</span>
         <span>{item.time}</span>
       </div>
-      <div className="notificationContent">{item.content}</div>
+      <div
+        className={`notificationContent${
+          { willShow }.willShow === item.id ? '' : ' notificationContentHidden'
+        }
+        }`}
+      >
+        {item.content}
+      </div>
     </Toast>
   ));
 
