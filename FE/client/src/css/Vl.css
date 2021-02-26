@@ -1,7 +1,9 @@
-.vl {
-  margin-left: 10px;
-  margin-right: 10px;
-  border-left: 3px solid;
-  border-color: white;
-  height: 70px;
+@media (min-width: 992px) {
+  .vl {
+    margin-left: 10px;
+    margin-right: 10px;
+    border-left: 3px solid;
+    border-color: white;
+    height: 70px;
+  }
 }
