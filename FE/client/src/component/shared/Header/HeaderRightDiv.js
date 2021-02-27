@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import searchIcon from '../../../static/image/search.png';
 import userIcon from '../../../static/image/user.png';
 import SearchBar from './SearchBar';
+import SidebarIcon from '../Sidebar/SidebarIcon';
 import '../../../css/HeaderRightDiv.css';
+import '../../../css/SidebarIcon.css';
 
 const HeaderRightDiv = () => {
   const [showSearchBar, setShowSearchBar] = useState(false);
@@ -29,6 +31,9 @@ const HeaderRightDiv = () => {
           <img src={userIcon} alt="user" />
         </div>
       </Link>
+      <div className="iconWrapper sidebarIconWrapper">
+        <SidebarIcon />
+      </div>
     </div>
   );
 };
