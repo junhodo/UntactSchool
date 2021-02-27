@@ -1,9 +1,11 @@
 import { React, useState } from 'react';
 import '../css/Notification.css';
-import { Toast, ToastHeader } from 'reactstrap';
+import { Toast, ToastHeader, Form, Input, Button } from 'reactstrap';
 
 const Notification = () => {
   const [willShow, setWillShow] = useState(0);
+  const [noteSave, setNoteSave] = useState();
+  const [noteWriteMode, setNoteWriteMode] = useState(false);
   //  title  sender  time  content  id
   const dummy = [
     {
@@ -80,7 +82,25 @@ const Notification = () => {
     }
   };
 
-  const items = dummy.map(item => (
+  const NoteSave = e => {
+    setNoteSave(e.target.value);
+  };
+
+  const btnClick = () => {
+    if (noteWriteMode) {
+      setNoteWriteMode(false);
+    } else {
+      setNoteWriteMode(true);
+    }
+  };
+
+  const textareaChange = e => {
+    const ta = e.target;
+    ta.style.height = 'auto';
+    ta.style.height = `${ta.scrollHeight}px`;
+  };
+
+  const notificationItem = dummy.map(item => (
     <Toast onClick={notificationClick} id={item.id}>
       <ToastHeader>{item.title}</ToastHeader>
       <div className="itemContent">
@@ -98,10 +118,38 @@ const Notification = () => {
     </Toast>
   ));
 
+  const messageMaker = (
+    <div className={noteWriteMode ? '' : 'notificationContentHidden'}>
+      <Form className="noteWriter">
+        <Input type="select">
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </Input>
+        <Input
+          type="textarea"
+          placeholder="내용을 입력하세요"
+          value={noteSave}
+          onChange={(NoteSave, textareaChange)}
+        />
+        <Button>전송</Button>
+      </Form>
+    </div>
+  );
+
   return (
     <div className="Box">
       <h4>알림</h4>
-      <div className="ItemBox">{items}</div>
+      <div className="ItemBox">
+        <div className="buttonBox">
+          <button type="button" className="noteMakeBtn" onClick={btnClick}>
+            알림작성
+          </button>
+          {messageMaker}
+        </div>
+        {notificationItem}
+      </div>
     </div>
   );
 };
