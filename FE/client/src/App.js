@@ -1,18 +1,14 @@
 import React from 'react';
 import './App.css';
-import { Route, Switch } from 'react-router-dom';
 import Header from './component/shared/Header/Header';
+import MainRouter from './component/shared/MainRouter';
 
 function App() {
   return (
     <div className="App">
       <p>this is App</p>
       <Header />
-      <Switch>
-        <Route exact path="/" />
-        <Route path="/group" />
-        <Route path="/my" />
-      </Switch>
+      <MainRouter />
     </div>
   );
 }

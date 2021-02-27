@@ -2,8 +2,6 @@
 
 #### cd FE
 
-#### cd FE
-
 #### npm install
 
 #### npm run start

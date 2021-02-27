@@ -25,5 +25,8 @@ module.exports = {
         endOfLine: 'auto'
       }
     ]
+  },
+  settings: {
+    'import/resolver': { node: { extensions: ['.js', '.jsx', '.ts', '.tsx'] } }
   }
 };
