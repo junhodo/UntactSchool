@@ -1,9 +1,13 @@
 import React from 'react';
+import MenuList from './MenuList';
+import Profile from './Profile';
+import '../../../css/Sidebar.css';
 
 function Sidebar() {
   return (
-    <div className="Sidebar">
-      <p>this is Sidebar</p>
+    <div className="sidebar">
+      <Profile />
+      <MenuList />
     </div>
   );
 }
