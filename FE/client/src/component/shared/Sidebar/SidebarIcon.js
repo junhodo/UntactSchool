@@ -8,11 +8,11 @@ function SidebarIcon() {
     setIsOpen(!isOpen);
     if (isOpen) {
       document.getElementsByClassName('main')[0].style.marginRight = '0px';
-      document.getElementsByClassName('sidebar')[0].style.width = '0px';
+      document.getElementsByClassName('sidebar')[0].style.width = '0';
       return;
     }
-    document.getElementsByClassName('main')[0].style.marginRight = '200px';
-    document.getElementsByClassName('sidebar')[0].style.width = '200px';
+    document.getElementsByClassName('main')[0].style.marginRight = '17%';
+    document.getElementsByClassName('sidebar')[0].style.width = '17%';
   };
 
   return (
