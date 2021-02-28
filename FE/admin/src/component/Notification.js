@@ -4,7 +4,7 @@ import { Toast, ToastHeader, Form, Input, Button } from 'reactstrap';
 
 const Notification = () => {
   const [willShow, setWillShow] = useState(0);
-  const [noteSave, setNoteSave] = useState();
+  const [noteSave, setNoteSave] = useState('');
   const [noteWriteMode, setNoteWriteMode] = useState(false);
   //  title  sender  time  content  id
   const [dummy, setDummy] = useState([
@@ -82,27 +82,31 @@ const Notification = () => {
     }
   };
 
-  const NoteSave = e => {
+  const noteChange = e => {
     setNoteSave(e.target.value);
-  };
-
-  const btnClick = () => setNoteWriteMode(prev => !prev);
-
-  const textareaChange = e => {
     const ta = e.target;
+    console.log(ta);
     ta.style.height = 'auto';
     ta.style.height = `${ta.scrollHeight}px`;
   };
 
+  const btnClick = () => setNoteWriteMode(prev => !prev);
+
   const noteSender = () => {
+    if (noteSave === '') {
+      setNoteWriteMode(false);
+      return;
+    }
     const newDummy = {
-      title: '공지사항ㅇ',
+      title: '공지사항',
       sender: '길무짱',
-      content: 'asdfdasfd',
+      content: noteSave,
       id: '100'
     };
     setDummy(dummy.concat(newDummy));
     setNoteSave('');
+    setNoteWriteMode(false);
+    // textarea.style.height = 'auto';
     // 새로추가한게  위로 가야 하는데 concat은 뒤로만 보내고 unshift 는 에러가 난다.
   };
 
@@ -137,7 +141,7 @@ const Notification = () => {
           type="textarea"
           placeholder="내용을 입력하세요"
           value={noteSave}
-          onChange={(NoteSave, textareaChange)}
+          onChange={noteChange}
         />
         <Button onClick={noteSender}>전송</Button>
       </Form>
