@@ -86,13 +86,7 @@ const Notification = () => {
     setNoteSave(e.target.value);
   };
 
-  const btnClick = () => {
-    if (noteWriteMode) {
-      setNoteWriteMode(false);
-    } else {
-      setNoteWriteMode(true);
-    }
-  };
+  const btnClick = () => setNoteWriteMode(prev => !prev);
 
   const textareaChange = e => {
     const ta = e.target;
