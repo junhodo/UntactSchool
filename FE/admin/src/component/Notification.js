@@ -6,6 +6,7 @@ const Notification = () => {
   const [willShow, setWillShow] = useState(0);
   const [noteSave, setNoteSave] = useState();
   const [noteWriteMode, setNoteWriteMode] = useState(false);
+  //  title  sender  time  content  id
   const [dummy, setDummy] = useState([
     {
       title: '정기정검 공지',
@@ -72,7 +73,6 @@ const Notification = () => {
       id: '8'
     }
   ]);
-  //  title  sender  time  content  id
 
   const notificationClick = event => {
     event.preventDefault();
