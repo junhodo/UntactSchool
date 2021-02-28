@@ -1,0 +1,16 @@
+.menuList {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    border-radius: .25rem;
+}
+
+.menuListItem {
+    text-decoration: none;
+    position: relative;
+    display: block;
+    padding: .75rem;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, .125);
+}
