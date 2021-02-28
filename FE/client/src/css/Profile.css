@@ -1,0 +1,42 @@
+.profile {
+    padding: 20px 0 20px 20px;
+    background-color: #eeeeee;
+    box-shadow: 0 0 1px #222222;
+}
+
+.profileIamge {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid #e0e0e0;
+    background-color: #eeeeee;
+}
+
+.profileWrapper {
+    width: 75px;
+    height:75px;
+    margin: 0 20px 0 0;
+}
+
+.profileInfo {
+    margin: 5px 0;
+}
+
+.profileInfo > h6 {
+    font-weight: 700;
+}
+
+.profileInfo > p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
