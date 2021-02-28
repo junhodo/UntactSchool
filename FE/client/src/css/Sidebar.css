@@ -1,11 +1,13 @@
 .sidebar {
+    flex: 0 0 100%;
     width: 0;
-    height: 100%;
+    height: 100vh;
     position: fixed;
     z-index: 1;
     top: 136;
     right: 0;
-    background-color: #eeeeee;
+    background-color: #f7f7f7;
     overflow-x: hidden;
     transition: 0.5s;
+    border-left: 1px solid #ececec;
 }
