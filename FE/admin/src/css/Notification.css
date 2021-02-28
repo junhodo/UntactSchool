@@ -10,5 +10,27 @@
 .notificationContentHidden {
   visibility: hidden;
   max-height: 0px;
+}
 
+.buttonBox {
+  text-align: center;
+}
+
+.noteMakeBtn {
+  border: none;
+  margin: 8px;
+  padding: 2px;
+  padding-left: 18px;
+  padding-right: 18px;
+  border-radius: 12px;
+  background: #D1DFE8;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.noteMakeBtn:active {
+  transform: translateY(2px);
+}
+
+.noteWriter {
 }
