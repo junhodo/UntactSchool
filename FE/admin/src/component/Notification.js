@@ -6,8 +6,7 @@ const Notification = () => {
   const [willShow, setWillShow] = useState(0);
   const [noteSave, setNoteSave] = useState();
   const [noteWriteMode, setNoteWriteMode] = useState(false);
-  //  title  sender  time  content  id
-  const dummy = [
+  const [dummy, setDummy] = useState([
     {
       title: '정기정검 공지',
       sender: 'GM길무',
@@ -72,7 +71,8 @@ const Notification = () => {
         '안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.',
       id: '8'
     }
-  ];
+  ]);
+  //  title  sender  time  content  id
 
   const notificationClick = event => {
     event.preventDefault();
@@ -98,6 +98,18 @@ const Notification = () => {
     const ta = e.target;
     ta.style.height = 'auto';
     ta.style.height = `${ta.scrollHeight}px`;
+  };
+
+  const noteSender = () => {
+    const newDummy = {
+      title: '공지사항ㅇ',
+      sender: '길무짱',
+      content: 'asdfdasfd',
+      id: '100'
+    };
+    setDummy(dummy.concat(newDummy));
+    setNoteSave('');
+    // 새로추가한게  위로 가야 하는데 concat은 뒤로만 보내고 unshift 는 에러가 난다.
   };
 
   const notificationItem = dummy.map(item => (
@@ -133,7 +145,7 @@ const Notification = () => {
           value={noteSave}
           onChange={(NoteSave, textareaChange)}
         />
-        <Button>전송</Button>
+        <Button onClick={noteSender}>전송</Button>
       </Form>
     </div>
   );
