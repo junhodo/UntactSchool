@@ -85,7 +85,6 @@ const Notification = () => {
   const noteChange = e => {
     setNoteSave(e.target.value);
     const ta = e.target;
-    console.log(ta);
     ta.style.height = 'auto';
     ta.style.height = `${ta.scrollHeight}px`;
   };

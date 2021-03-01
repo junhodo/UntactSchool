@@ -154,6 +154,7 @@ const Report = () => {
         <div>{item.content}</div>
         <Form className="excute">
           <Input type="select" onChange={excuteDeliver} id={item.id}>
+            <option value="선처">미처리</option>
             <option value="선처">선처</option>
             <option value="1일 정지">1일 정지</option>
             <option value="3일 정지">3일 정지</option>
