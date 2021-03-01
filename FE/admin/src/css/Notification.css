@@ -31,3 +31,19 @@
 .noteMakeBtn:active {
   transform: translateY(2px);
 }
+
+.targetUserList {
+  margin: 8px;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.targetUser{
+  margin-right: 8px;
+  padding-right: 8px;
+  padding-left: 8px;
+  border-radius: 16px;
+  font-size: 14px;
+  background-color: #D1DFE8;
+}

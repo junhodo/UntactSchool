@@ -73,6 +73,9 @@ const Notification = () => {
       id: '8'
     }
   ]);
+  const dummyUser = ['alsanrlf', 'gilmujjang', 'minmugil'];
+  const [targetUser, setTargetUser] = useState([]);
+  const [target, setTarget] = useState('');
 
   const notificationClick = event => {
     event.preventDefault();
@@ -87,6 +90,21 @@ const Notification = () => {
     const ta = e.target;
     ta.style.height = 'auto';
     ta.style.height = `${ta.scrollHeight}px`;
+  };
+
+  const targetChange = e => {
+    if (e.key === 'Enter') {
+      if (dummyUser.includes(target)) {
+        if (targetUser.includes(target) === false) {
+          setTargetUser(targetUser.concat(target));
+          console.log(target, '추가했어');
+        }
+      }
+      setTarget('');
+      e.preventDefault();
+    } else {
+      setTarget(e.target.value);
+    }
   };
 
   const btnClick = () => setNoteWriteMode(prev => !prev);
@@ -127,15 +145,20 @@ const Notification = () => {
     </Toast>
   ));
 
+  const targetUserList = targetUser.map(item => (
+    <span className="targetUser">{item}</span>
+  ));
+
   const messageMaker = (
     <div className={noteWriteMode ? '' : 'notificationContentHidden'}>
       <Form className="noteWriter">
-        <Input type="select">
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </Input>
+        <Input
+          type="text"
+          value={target}
+          onChange={targetChange}
+          onKeyPress={targetChange}
+        />
+        <div className="targetUserList">{targetUserList}</div>
         <Input
           type="textarea"
           placeholder="내용을 입력하세요"
