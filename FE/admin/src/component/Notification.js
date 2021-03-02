@@ -152,12 +152,16 @@ const Notification = () => {
   const messageMaker = (
     <div className={noteWriteMode ? '' : 'notificationContentHidden'}>
       <Form className="noteWriter">
-        <Input
-          type="text"
-          value={target}
-          onChange={targetChange}
-          onKeyPress={targetChange}
-        />
+        <div className="messageTargetBox">
+          <span>전송대상</span>
+          <Input
+            type="text"
+            value={target}
+            onChange={targetChange}
+            onKeyPress={targetChange}
+          />
+        </div>
+
         <div className="targetUserList">{targetUserList}</div>
         <Input
           type="textarea"

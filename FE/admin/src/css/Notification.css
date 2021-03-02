@@ -47,3 +47,13 @@
   font-size: 14px;
   background-color: #D1DFE8;
 }
+
+.messageTargetBox{
+  display: flex;
+  font-size: 12px;
+}
+
+.messageTargetBox span {
+  width: 80px;
+  text-align: center;
+}
