@@ -1,38 +1,35 @@
 import React from 'react';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import Nav from 'react-bootstrap/Nav';
 import '../../../css/MenuList.css';
+import { OptionIcon, AddGroupIcon, LogoutIcon } from '../../../static/svg/icon';
+
+const data = [
+  {
+    name: '그룹 생성',
+    icon: AddGroupIcon,
+    link: '/addgroup'
+  },
+  {
+    name: '내 정보 조회',
+    icon: OptionIcon,
+    link: '/myinfo'
+  },
+  {
+    name: '로그아웃',
+    icon: LogoutIcon,
+    link: '/logout'
+  }
+];
 
 function MenuList() {
   return (
-    <>
-      <Card>
-        <Card.Header>
-          <Nav variant="tabs" defaultActiveKey="#first">
-            <Nav.Item>
-              <Nav.Link href="#first">Active</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link href="#link">Link</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link href="#disabled" disabled>
-                Disabled
-              </Nav.Link>
-            </Nav.Item>
-          </Nav>
-        </Card.Header>
-        <Card.Body>
-          <Card.Title>Special title treatment</Card.Title>
-          <Card.Text>
-            With supporting text below as a natural lead-in to additional
-            content.
-          </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
-        </Card.Body>
-      </Card>
-    </>
+    <div className="menuList">
+      {data.map(e => (
+        <div className="menuListItem">
+          <e.icon />
+          <h5>{e.name}</h5>
+        </div>
+      ))}
+    </div>
   );
 }
 
