@@ -17,3 +17,11 @@
   width: 64px;
   height: 64px;
 }
+
+i {
+  color: black;
+}
+
+i:hover {
+  color: gray
+}
