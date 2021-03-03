@@ -5,4 +5,5 @@
 }
 .SearchBar {
   overflow: hidden;
+  transition: 0.5s;
 }

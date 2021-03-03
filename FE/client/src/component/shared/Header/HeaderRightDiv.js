@@ -9,7 +9,6 @@ import '../../../css/SidebarIcon.css';
 
 const HeaderRightDiv = () => {
   const [showSearchBar, setShowSearchBar] = useState(false);
-
   const [width, setWidth] = useState(0);
   const toggle = () => {
     const searchBarWidth = showSearchBar ? 0 : 100;
