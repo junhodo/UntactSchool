@@ -1,9 +1,12 @@
 import React from 'react';
+import '../../../css/group/ContentContainer/ContentContainer.css';
+import { Table } from 'react-bootstrap';
 
 const ContentContainer = () => {
   return (
     <div>
-      <p>this is content container</p>
+      <Table />
+      <p>this is my Content Container.</p>
     </div>
   );
 };
