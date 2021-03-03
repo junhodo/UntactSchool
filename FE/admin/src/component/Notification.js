@@ -76,6 +76,7 @@ const Notification = () => {
   const dummyUser = ['alsanrlf', 'gilmujjang', 'minmugil'];
   const [targetUser, setTargetUser] = useState([]);
   const [target, setTarget] = useState('');
+  const [headSave, setHeadSave] = useState('');
 
   const notificationClick = event => {
     event.preventDefault();
@@ -92,12 +93,18 @@ const Notification = () => {
     ta.style.height = `${ta.scrollHeight}px`;
   };
 
+  const headChange = e => {
+    setHeadSave(e.target.value);
+    const ta = e.target;
+    ta.style.height = 'auto';
+    ta.style.height = `${ta.scrollHeight}px`;
+  };
+
   const targetChange = e => {
     if (e.key === 'Enter') {
       if (dummyUser.includes(target)) {
         if (targetUser.includes(target) === false) {
           setTargetUser(targetUser.concat(target));
-          console.log(target, '추가했어');
         }
       }
       setTarget('');
@@ -115,13 +122,16 @@ const Notification = () => {
       return;
     }
     const newDummy = {
-      title: '공지사항',
+      title: headSave,
       sender: '길무짱',
       content: noteSave,
       id: '100'
     };
     setDummy(dummy.concat(newDummy));
     setNoteSave('');
+    setHeadSave('');
+    setTarget('');
+    setTargetUser([]);
     setNoteWriteMode(false);
     // textarea.style.height = 'auto';
     // 새로추가한게  위로 가야 하는데 concat은 뒤로만 보내고 unshift 는 에러가 난다.
@@ -163,6 +173,12 @@ const Notification = () => {
         </div>
 
         <div className="targetUserList">{targetUserList}</div>
+        <Input
+          type="textarea"
+          placeholder="제목을 입력하세요"
+          value={headSave}
+          onChange={headChange}
+        />
         <Input
           type="textarea"
           placeholder="내용을 입력하세요"
