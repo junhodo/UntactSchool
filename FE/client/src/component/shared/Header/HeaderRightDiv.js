@@ -9,18 +9,16 @@ import '../../../css/SidebarIcon.css';
 
 const HeaderRightDiv = () => {
   const [showSearchBar, setShowSearchBar] = useState(false);
+
+  const [width, setWidth] = useState(0);
   const toggle = () => {
+    const searchBarWidth = showSearchBar ? 0 : 100;
+    setWidth(searchBarWidth);
     setShowSearchBar(!showSearchBar);
   };
-  let searchBar;
-  if (showSearchBar) {
-    searchBar = <SearchBar className="searchBar" width="0" />;
-  } else {
-    searchBar = <SearchBar className="searchBar" width="100" />;
-  }
   return (
     <div className="HeaderRightDiv">
-      {searchBar}
+      <SearchBar className="SearchBar" width={width} />
       <Link to="/search" className="search" onClick={toggle}>
         <div className="iconWraper">
           <img src={searchIcon} alt="search" />

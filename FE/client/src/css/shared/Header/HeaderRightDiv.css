@@ -1,4 +1,8 @@
 .HeaderRightDiv {
   display: flex;
   position: relative;
+  align-items: center;
+}
+.SearchBar {
+  overflow: hidden;
 }
