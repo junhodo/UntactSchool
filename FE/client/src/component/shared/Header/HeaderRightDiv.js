@@ -4,7 +4,7 @@ import searchIcon from '../../../static/image/search.png';
 import userIcon from '../../../static/image/user.png';
 import SearchBar from './SearchBar';
 import SidebarIcon from '../Sidebar/SidebarIcon';
-import '../../../css/HeaderRightDiv.css';
+import '../../../css/shared/Header/HeaderRightDiv.css';
 import '../../../css/SidebarIcon.css';
 
 const HeaderRightDiv = () => {
@@ -14,9 +14,9 @@ const HeaderRightDiv = () => {
   };
   let searchBar;
   if (showSearchBar) {
-    searchBar = <SearchBar className="searchBar" />;
+    searchBar = <SearchBar className="searchBar" width="0" />;
   } else {
-    searchBar = '';
+    searchBar = <SearchBar className="searchBar" width="100" />;
   }
   return (
     <div className="HeaderRightDiv">

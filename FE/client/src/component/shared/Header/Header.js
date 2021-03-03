@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Nav, Navbar, NavbarBrand, Col } from 'react-bootstrap';
-import '../../../css/Header.css';
+import '../../../css/shared/Header/Header.css';
 
 import Vl from './Vl';
 import HeaderRightDiv from './HeaderRightDiv';
