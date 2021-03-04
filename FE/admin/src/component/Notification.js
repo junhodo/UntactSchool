@@ -73,7 +73,14 @@ const Notification = () => {
       id: '8'
     }
   ]);
-  const dummyUser = ['alsanrlf', 'gilmujjang', 'minmugil'];
+  const dummyUser = [
+    'alsanrlf',
+    'gilmujjang',
+    'minmugil',
+    'alsanrlf1',
+    'alsanrlf2',
+    'alsanrlf3'
+  ];
   const [targetUser, setTargetUser] = useState([]);
   const [target, setTarget] = useState('');
   const [headSave, setHeadSave] = useState('');
@@ -162,7 +169,7 @@ const Notification = () => {
   const messageMaker = (
     <div className={noteWriteMode ? '' : 'notificationContentHidden'}>
       <Form className="noteWriter">
-        <div className="messageTargetBox">
+        <div className="messageTargetBox toastMargin">
           <span>전송대상</span>
           <Input
             type="text"
@@ -173,18 +180,22 @@ const Notification = () => {
         </div>
 
         <div className="targetUserList">{targetUserList}</div>
-        <Input
-          type="textarea"
-          placeholder="제목을 입력하세요"
-          value={headSave}
-          onChange={headChange}
-        />
-        <Input
-          type="textarea"
-          placeholder="내용을 입력하세요"
-          value={noteSave}
-          onChange={noteChange}
-        />
+        <div className="toastMargin">
+          <Input
+            type="textarea"
+            placeholder="제목을 입력하세요"
+            value={headSave}
+            onChange={headChange}
+          />
+        </div>
+        <div className="toastMargin">
+          <Input
+            type="textarea"
+            placeholder="내용을 입력하세요"
+            value={noteSave}
+            onChange={noteChange}
+          />
+        </div>
         <Button onClick={noteSender}>전송</Button>
       </Form>
     </div>

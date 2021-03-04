@@ -40,7 +40,9 @@
 }
 
 .targetUser{
-  margin: 8px;
+  margin: 4px;
+  margin-top: 8px;
+  margin-bottom: 0;
   padding-right: 8px;
   padding-left: 8px;
   border-radius: 16px;
@@ -51,11 +53,11 @@
 .messageTargetBox{
   display: flex;
   font-size: 12px;
+  align-items: center;
 }
 
 .messageTargetBox span {
-  width: 80px;
-  text-align: center;
+  width: 70px;
 }
 
 .userProfile {
@@ -90,4 +92,8 @@
 .flexWrap {
   display: flex;
   flex-wrap: wrap;
+}
+
+.toastMargin {
+  margin: 4px;
 }
