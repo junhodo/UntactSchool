@@ -95,3 +95,11 @@
 .needMargin {
   margin: 4px;
 }
+
+.manager {
+  font-size: 16px;
+  position: relative;
+  left: 23px;
+  bottom: 8px;
+  transform: rotate(-20deg);
+}
