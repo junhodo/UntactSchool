@@ -169,7 +169,7 @@ const Notification = () => {
   const messageMaker = (
     <div className={noteWriteMode ? '' : 'notificationContentHidden'}>
       <Form className="noteWriter">
-        <div className="messageTargetBox toastMargin">
+        <div className="messageTargetBox needMargin">
           <span>전송대상</span>
           <Input
             type="text"
@@ -178,7 +178,6 @@ const Notification = () => {
             onKeyPress={targetChange}
           />
         </div>
-
         <div className="targetUserList">{targetUserList}</div>
         <div className="toastMargin">
           <Input
@@ -188,7 +187,7 @@ const Notification = () => {
             onChange={headChange}
           />
         </div>
-        <div className="toastMargin">
+        <div className="needMargin">
           <Input
             type="textarea"
             placeholder="내용을 입력하세요"
