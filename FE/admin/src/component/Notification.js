@@ -112,8 +112,13 @@ const Notification = () => {
       if (dummyUser.includes(target)) {
         if (targetUser.includes(target) === false) {
           setTargetUser(targetUser.concat(target));
+        } else {
+          alert('이미 존재하는 사용자 입니다');
         }
+      } else {
+        alert('존재하지 않는 사용자 입니다');
       }
+
       setTarget('');
       e.preventDefault();
     } else {
@@ -125,9 +130,18 @@ const Notification = () => {
 
   const noteSender = () => {
     if (noteSave === '') {
-      setNoteWriteMode(false);
+      alert('내용을 입력하세요');
       return;
     }
+    if (headSave === '') {
+      alert('제목을 입력하세요');
+      return;
+    }
+    if (targetUser.length === 0) {
+      alert('전송대상을 설정하세요');
+      return;
+    }
+    console.log(targetUser);
     const newDummy = {
       title: headSave,
       sender: '길무짱',
