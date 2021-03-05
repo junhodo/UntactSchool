@@ -149,7 +149,14 @@ const Report = () => {
       <ToastHeader onClick={notificationClick} id={item.id}>
         {item.defendant}__{item.excute}
       </ToastHeader>
-      <div className="itemContent">
+      <div
+        className="itemContent noneBorder"
+        onClick={notificationClick}
+        id={item.id}
+        role="button"
+        tabIndex={0}
+        onKeyDown={notificationClick}
+      >
         <span>{item.classfication}</span>
         <span>{item.time}</span>
       </div>

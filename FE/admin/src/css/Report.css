@@ -25,3 +25,7 @@
   font-size: 14px;
   background-color: #D1DFE8;
 }
+
+.noneBorder {
+  outline: none;
+}

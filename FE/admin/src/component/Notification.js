@@ -154,6 +154,7 @@ const Notification = () => {
     setTarget('');
     setTargetUser([]);
     setNoteWriteMode(false);
+    alert('전송되었습니다');
     // textarea.style.height = 'auto';
     // 새로추가한게  위로 가야 하는데 concat은 뒤로만 보내고 unshift 는 에러가 난다.
   };
