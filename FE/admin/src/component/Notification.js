@@ -6,11 +6,12 @@ const Notification = () => {
   const [willShow, setWillShow] = useState(0);
   const [noteSave, setNoteSave] = useState('');
   const [noteWriteMode, setNoteWriteMode] = useState(false);
-  //  title  sender  time  content  id
+  //  title  sender  giver  time  content  id
   const [dummy, setDummy] = useState([
     {
       title: '정기정검 공지',
       sender: 'GM길무',
+      receiver: ['alsanrlf', 'gilmujjang'],
       time: '2021-02-24 : 21:15',
       content:
         '안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.',
@@ -19,6 +20,7 @@ const Notification = () => {
     {
       title: '정기정검 공지',
       sender: 'GM길무',
+      receiver: ['alsanrlf', 'gilmujjang'],
       time: '2021-02-24 : 21:15',
       content:
         '안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.',
@@ -27,6 +29,7 @@ const Notification = () => {
     {
       title: '정기정검 공지',
       sender: 'GM길무',
+      receiver: ['alsanrlf', 'gilmujjang'],
       time: '2021-02-24 : 21:15',
       content:
         '안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.',
@@ -35,6 +38,7 @@ const Notification = () => {
     {
       title: '정기정검 공지',
       sender: 'GM길무',
+      receiver: ['alsanrlf', 'gilmujjang'],
       time: '2021-02-24 : 21:15',
       content:
         '안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.',
@@ -43,6 +47,7 @@ const Notification = () => {
     {
       title: '정기정검 공지',
       sender: 'GM길무',
+      receiver: ['alsanrlf', 'gilmujjang'],
       time: '2021-02-24 : 21:15',
       content:
         '안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.',
@@ -51,26 +56,11 @@ const Notification = () => {
     {
       title: '정기정검 공지',
       sender: 'GM길무',
+      receiver: ['alsanrlf', 'gilmujjang'],
       time: '2021-02-24 : 21:15',
       content:
         '안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.',
       id: '6'
-    },
-    {
-      title: '정기정검 공지',
-      sender: 'GM길무',
-      time: '2021-02-24 : 21:15',
-      content:
-        '안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.',
-      id: '7'
-    },
-    {
-      title: '정기정검 공지',
-      sender: 'GM길무',
-      time: '2021-02-24 : 21:15',
-      content:
-        '안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.',
-      id: '8'
     }
   ]);
   const dummyUser = [
@@ -84,6 +74,7 @@ const Notification = () => {
   const [targetUser, setTargetUser] = useState([]);
   const [target, setTarget] = useState('');
   const [headSave, setHeadSave] = useState('');
+  let makeid = 7; // 아이디생성을 위한 임시값
 
   const notificationClick = event => {
     event.preventDefault();
@@ -141,13 +132,14 @@ const Notification = () => {
       alert('전송대상을 설정하세요');
       return;
     }
-    console.log(targetUser);
     const newDummy = {
       title: headSave,
       sender: '길무짱',
+      receiver: { targetUser },
       content: noteSave,
-      id: '100'
+      id: makeid
     };
+    makeid += 1;
     setDummy(dummy.concat(newDummy));
     setNoteSave('');
     setHeadSave('');
@@ -172,6 +164,13 @@ const Notification = () => {
         }
         }`}
       >
+        <div className="receiver">
+          <span className="flexWrap">
+            {item.receiver.map(i => (
+              <span className="targetUser">{i}</span>
+            ))}
+          </span>
+        </div>
         {item.content}
       </div>
     </Toast>
@@ -194,7 +193,7 @@ const Notification = () => {
           />
         </div>
         <div className="targetUserList">{targetUserList}</div>
-        <div className="toastMargin">
+        <div className="toastMargin needMargin">
           <Input
             type="textarea"
             placeholder="제목을 입력하세요"
@@ -217,14 +216,14 @@ const Notification = () => {
 
   return (
     <div className="Box">
-      <h4>알림</h4>
+      <div className="contentFlex">
+        <h4>알림</h4>
+        <button type="button" className="noteMakeBtn" onClick={btnClick}>
+          알림작성
+        </button>
+      </div>
       <div className="ItemBox">
-        <div className="buttonBox">
-          <button type="button" className="noteMakeBtn" onClick={btnClick}>
-            알림작성
-          </button>
-          {messageMaker}
-        </div>
+        <div className="buttonBox">{messageMaker}</div>
         {notificationItem}
       </div>
     </div>
