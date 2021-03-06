@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
 import { Toast, ToastHeader, Form, Input, Button } from 'reactstrap';
 import '../css/Report.css';
 
@@ -6,6 +6,7 @@ const Report = () => {
   const [willShow, setWillShow] = useState(0);
   const [excution, setExcution] = useState('선처');
   const [defendantID, setDefendant] = useState(0);
+  const [unexcution, setUnexcution] = useState(0);
   // defendant  classfication  time  reporter  content  id  excute  where
   const [dummy, setDummy] = useState([
     {
@@ -120,6 +121,16 @@ const Report = () => {
     }
   ]);
 
+  useEffect(() => {
+    let cnt = 0;
+    for (let i = 0; i < dummy.length; i += 1) {
+      if (dummy[i].excute === '미처리') {
+        cnt += 1;
+      }
+    }
+    setUnexcution(cnt);
+  }, [...dummy]);
+
   const notificationClick = event => {
     event.preventDefault();
     setWillShow(Number(event.currentTarget.id));
@@ -199,7 +210,7 @@ const Report = () => {
         <span>
           <h4>신고 접수</h4>
         </span>
-        <span>미처리 신고:</span>
+        <span>미처리 신고:{unexcution}</span>
       </div>
       <div className="ItemBox">{reportList}</div>
     </div>
