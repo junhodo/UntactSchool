@@ -23,8 +23,8 @@ const Report = () => {
     {
       defendant: '민무길',
       reporter: '김정환',
-      classfication: '욕설',
-      time: '2021-02-24 : 21:05',
+      classfication: '성희롱',
+      time: '2021-02-24 : 19:34',
       content:
         '아니 재가 어제 저한테 막 욕을 했어요. 아니 무줙권 정지해주세요.',
       excute: '미처리',
@@ -34,8 +34,8 @@ const Report = () => {
     {
       defendant: '민무길',
       reporter: '장현광',
-      classfication: '욕설',
-      time: '2021-02-24 : 21:05',
+      classfication: '폭행',
+      time: '2021-02-23 : 11:48',
       content:
         '아니 재가 어제 저한테 막 욕을 했어요. 아니 무줙권 정지해주세요.',
       excute: '미처리',
@@ -45,8 +45,8 @@ const Report = () => {
     {
       defendant: '민무길',
       reporter: '강명수',
-      classfication: '욕설',
-      time: '2021-02-24 : 21:05',
+      classfication: '도배',
+      time: '2021-02-13 : 22:13',
       content:
         '아니 재가 어제 저한테 막 욕을 했어요. 아니 무줙권 정지해주세요.',
       excute: '미처리',
@@ -56,8 +56,8 @@ const Report = () => {
     {
       defendant: '민무길',
       reporter: '길무짱',
-      classfication: '욕설',
-      time: '2021-02-24 : 21:05',
+      classfication: '절도',
+      time: '2021-01-30 : 21:05',
       content:
         '아니 재가 어제 저한테 막 욕을 했어요. 아니 무줙권 정지해주세요.',
       excute: '미처리',
@@ -68,7 +68,7 @@ const Report = () => {
       defendant: '민무길',
       reporter: '길무짱',
       classfication: '욕설',
-      time: '2021-02-24 : 21:05',
+      time: '2021-01-22 : 21:05',
       content:
         '아니 재가 어제 저한테 막 욕을 했어요. 아니 무줙권 정지해주세요.',
       excute: '미처리',
@@ -79,7 +79,7 @@ const Report = () => {
       defendant: '민무길',
       reporter: '길무짱',
       classfication: '욕설',
-      time: '2021-02-24 : 21:05',
+      time: '2021-01-12 : 21:05',
       content:
         '아니 재가 어제 저한테 막 욕을 했어요. 아니 무줙권 정지해주세요.',
       excute: '미처리',
