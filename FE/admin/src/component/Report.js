@@ -195,7 +195,12 @@ const Report = () => {
 
   return (
     <div className="Box">
-      <h4>신고 접수</h4>
+      <div className="contentFlex">
+        <span>
+          <h4>신고 접수</h4>
+        </span>
+        <span>미처리 신고:</span>
+      </div>
       <div className="ItemBox">{reportList}</div>
     </div>
   );

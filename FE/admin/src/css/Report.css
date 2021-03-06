@@ -29,3 +29,8 @@
 .noneBorder {
   outline: none;
 }
+
+.contentFlex {
+  display: flex;
+  justify-content: space-between;
+}

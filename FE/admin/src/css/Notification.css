@@ -103,3 +103,6 @@
   bottom: 8px;
   transform: rotate(-20deg);
 }
+.noneBorder {
+  outline: none;
+}

@@ -1,11 +1,10 @@
 import { React, useState } from 'react';
-import { Toast, ToastHeader } from 'reactstrap';
 import '../css/Notification.css';
+import '../css/PersonInfo.css';
+import { Toast, ToastHeader, Form, Input, Button } from 'reactstrap';
 import userProfile from '../static/profileExample.jpg';
 
 const PersonInfo = () => {
-  // const reportedDummy = ['', '욕설', '도배', '성희롱'];
-  // const groupDummy = ['토익9990', '정처기', '투자공부방'];
   // nickname    userid    name    join   id   group  reported  age  gender
   const dummy = [
     {
@@ -64,7 +63,10 @@ const PersonInfo = () => {
       gender: 'male'
     }
   ];
+  const [userMakeMode, setUserMakeMode] = useState(false);
   const [willShow, setWillShow] = useState(0);
+
+  const btnClick = () => setUserMakeMode(prev => !prev);
 
   const notificationClick = event => {
     event.preventDefault();
@@ -73,6 +75,46 @@ const PersonInfo = () => {
       setWillShow(0);
     }
   };
+
+  const userMaker = (
+    <div className={userMakeMode ? '' : 'notificationContentHidden'}>
+      <Form className="noteWriter">
+        <div className="messageTargetBox needMargin">
+          <span>아이디</span>
+          <Input type="text" />
+        </div>
+        <div className="messageTargetBox needMargin">
+          <span>비밀번호</span>
+          <Input type="text" />
+        </div>
+        <div className="messageTargetBox needMargin">
+          <span>닉네임</span>
+          <Input type="text" />
+        </div>
+        <div className="messageTargetBox needMargin">
+          <span>이름</span>
+          <Input type="text" />
+        </div>
+        <div className="messageTargetBox needMargin">
+          <span>나이</span>
+          <Input type="text" />
+        </div>
+        <div className="messageTargetBox needMargin">
+          <span>성별</span>
+          <Input type="text" />
+        </div>
+        <div className="messageTargetBox needMargin">
+          <span>이메일</span>
+          <Input type="text" />
+        </div>
+        <div className="messageTargetBox needMargin">
+          <span>전화번호</span>
+          <Input type="text" />
+        </div>
+        <Button>전송</Button>
+      </Form>
+    </div>
+  );
 
   const personInfo = dummy.map(item => (
     <Toast onClick={notificationClick} id={item.id}>
@@ -128,10 +170,27 @@ const PersonInfo = () => {
       </div>
     </Toast>
   ));
+
   return (
     <div className="Box">
-      <h4>회원 정보</h4>
-      <div className="ItemBox">{personInfo}</div>
+      <div className="contentFlex">
+        <span>
+          <h4>회원 정보</h4>
+        </span>
+        <span
+          className="userMakerBtn noneBorder"
+          onClick={btnClick}
+          role="button"
+          tabIndex={0}
+          onKeyPress={btnClick}
+        >
+          <i className="fas fa-plus-circle fa-lg" />
+        </span>
+      </div>
+      <div className="ItemBox">
+        <div>{userMaker}</div>
+        {personInfo}
+      </div>
     </div>
   );
 };
