@@ -19,7 +19,7 @@
 
 .noteMakeBtn {
   border: none;
-  margin: 8px;
+  margin-bottom: 8px;
   padding: 2px;
   padding-left: 18px;
   padding-right: 18px;
@@ -102,3 +102,4 @@
 .noneBorder {
   outline: none;
 }
+

@@ -6,7 +6,7 @@ const Notification = () => {
   const [willShow, setWillShow] = useState(0);
   const [noteSave, setNoteSave] = useState('');
   const [noteWriteMode, setNoteWriteMode] = useState(false);
-  //  title  sender  giver  time  content  id
+  //  title  sender  receiver  time  content  id
   const [dummy, setDummy] = useState([
     {
       title: '정기정검 공지',
@@ -141,12 +141,20 @@ const Notification = () => {
       alert('전송대상을 설정하세요');
       return;
     }
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const hour = date.getHours();
+    const minute = date.getMinutes();
+    const now = `${year}-${month}-${day} | ${hour}:${minute}`;
     const newDummy = {
       title: headSave,
       sender: '길무짱',
-      receiver: { targetUser },
+      receiver: targetUser,
       content: noteSave,
-      id: makeid
+      id: String(makeid),
+      time: now
     };
     makeid += 1;
     setDummy(dummy.concat(newDummy));
