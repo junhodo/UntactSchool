@@ -7,7 +7,6 @@ import Sidebar from './component/shared/Sidebar/Sidebar';
 function App() {
   return (
     <div className="App">
-      <p>this is App</p>
       <Header />
       <Sidebar />
       <MainRouter />
