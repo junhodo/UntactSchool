@@ -1,0 +1,8 @@
+.ContentContainer {
+  min-width: 150px;
+  max-width: 500px;
+  min-height: 350px;
+  max-height: 800px;
+  border: 1px solid;
+  border-radius: 25px;
+}
