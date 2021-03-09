@@ -19,7 +19,7 @@
 
 .noteMakeBtn {
   border: none;
-  margin: 8px;
+  margin-bottom: 8px;
   padding: 2px;
   padding-left: 18px;
   padding-right: 18px;
@@ -97,12 +97,9 @@
 }
 
 .manager {
-  font-size: 16px;
-  position: relative;
-  left: 23px;
-  bottom: 8px;
-  transform: rotate(-20deg);
+  background-color: pink;
 }
 .noneBorder {
   outline: none;
 }
+

@@ -6,71 +6,68 @@ const Notification = () => {
   const [willShow, setWillShow] = useState(0);
   const [noteSave, setNoteSave] = useState('');
   const [noteWriteMode, setNoteWriteMode] = useState(false);
-  //  title  sender  time  content  id
+  //  title  sender  receiver  time  content  id
   const [dummy, setDummy] = useState([
     {
       title: '정기정검 공지',
       sender: 'GM길무',
+      receiver: ['alsanrlf'],
       time: '2021-02-24 : 21:15',
       content:
-        '안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.',
+        '안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.',
       id: '1'
     },
     {
-      title: '정기정검 공지',
+      title: '그룹 삭제 안내',
       sender: 'GM길무',
+      receiver: [
+        'alsanrlf',
+        'gilmujjang',
+        'alsanrlf1',
+        'alsanrlf2',
+        'alsanrlf3',
+        'alsanrlf4'
+      ],
+      time: '2021-02-16 : 21:15',
+      content:
+        '안녕하세요 GM길무 입니다. 불건전한 그룹활동으로 인해 그룹을 삭제했음을 알려드립니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.',
+      id: '4'
+    },
+    {
+      title: '제재내역 안내',
+      sender: 'GM길무',
+      receiver: ['alsanrlf', 'gilmujjang'],
       time: '2021-02-24 : 21:15',
       content:
-        '안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.',
+        '안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.',
       id: '2'
     },
     {
       title: '정기정검 공지',
       sender: 'GM길무',
+      receiver: ['alsanrlf', 'gilmujjang'],
       time: '2021-02-24 : 21:15',
       content:
-        '안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.',
+        '안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.',
       id: '3'
     },
     {
-      title: '정기정검 공지',
+      title: '오류 안내',
       sender: 'GM길무',
-      time: '2021-02-24 : 21:15',
+      receiver: ['alsanrlf', 'gilmujjang', 'alsanrlf1', 'alsanrlf2'],
+      time: '2021-02-14 : 21:15',
       content:
-        '안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.',
-      id: '4'
-    },
-    {
-      title: '정기정검 공지',
-      sender: 'GM길무',
-      time: '2021-02-24 : 21:15',
-      content:
-        '안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.',
+        '안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.',
       id: '5'
     },
     {
-      title: '정기정검 공지',
+      title: '제제내역 안내',
       sender: 'GM길무',
-      time: '2021-02-24 : 21:15',
+      receiver: ['gilmujjang'],
+      time: '2021-02-23 : 11:15',
       content:
-        '안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.',
+        '안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.',
       id: '6'
-    },
-    {
-      title: '정기정검 공지',
-      sender: 'GM길무',
-      time: '2021-02-24 : 21:15',
-      content:
-        '안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.',
-      id: '7'
-    },
-    {
-      title: '정기정검 공지',
-      sender: 'GM길무',
-      time: '2021-02-24 : 21:15',
-      content:
-        '안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.안녕하세요 GM길무 입니다. 내일 새볍 04시부터 약 2시간 정도 서버점검이 있을 예정입니다.',
-      id: '8'
     }
   ]);
   const dummyUser = [
@@ -79,11 +76,14 @@ const Notification = () => {
     'minmugil',
     'alsanrlf1',
     'alsanrlf2',
-    'alsanrlf3'
+    'alsanrlf3',
+    'alsanrlf4',
+    'alsanrlf5'
   ];
   const [targetUser, setTargetUser] = useState([]);
   const [target, setTarget] = useState('');
   const [headSave, setHeadSave] = useState('');
+  let makeid = 7; // 아이디생성을 위한 임시값
 
   const notificationClick = event => {
     event.preventDefault();
@@ -141,13 +141,22 @@ const Notification = () => {
       alert('전송대상을 설정하세요');
       return;
     }
-    console.log(targetUser);
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const hour = date.getHours();
+    const minute = date.getMinutes();
+    const now = `${year}-${month}-${day} | ${hour}:${minute}`;
     const newDummy = {
       title: headSave,
       sender: '길무짱',
+      receiver: targetUser,
       content: noteSave,
-      id: '100'
+      id: String(makeid),
+      time: now
     };
+    makeid += 1;
     setDummy(dummy.concat(newDummy));
     setNoteSave('');
     setHeadSave('');
@@ -172,6 +181,13 @@ const Notification = () => {
         }
         }`}
       >
+        <div className="receiver">
+          <span className="flexWrap">
+            {item.receiver.map(i => (
+              <span className="targetUser">{i}</span>
+            ))}
+          </span>
+        </div>
         {item.content}
       </div>
     </Toast>
@@ -194,7 +210,7 @@ const Notification = () => {
           />
         </div>
         <div className="targetUserList">{targetUserList}</div>
-        <div className="toastMargin">
+        <div className="toastMargin needMargin">
           <Input
             type="textarea"
             placeholder="제목을 입력하세요"
@@ -217,14 +233,14 @@ const Notification = () => {
 
   return (
     <div className="Box">
-      <h4>알림</h4>
+      <div className="contentFlex">
+        <h4>알림</h4>
+        <button type="button" className="noteMakeBtn" onClick={btnClick}>
+          알림작성
+        </button>
+      </div>
       <div className="ItemBox">
-        <div className="buttonBox">
-          <button type="button" className="noteMakeBtn" onClick={btnClick}>
-            알림작성
-          </button>
-          {messageMaker}
-        </div>
+        <div className="buttonBox">{messageMaker}</div>
         {notificationItem}
       </div>
     </div>

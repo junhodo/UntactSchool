@@ -37,7 +37,7 @@ const GroupInfo = () => {
         '김정환',
         '타락파워전사'
       ],
-      manager: '길무짱'
+      manager: '김정환'
     },
     {
       group: '토익합시다',
@@ -54,7 +54,7 @@ const GroupInfo = () => {
         '김정환',
         '타락파워전사'
       ],
-      manager: '길무짱'
+      manager: '이지훈'
     },
     {
       group: '토익합시다',
@@ -205,14 +205,11 @@ const GroupInfo = () => {
         <div>{item.description}</div>
         <div className="targetUserList">
           {item.member.map(i => (
-            <>
-              <i
-                className={`fas fa-crown manager${
-                  i === item.manager ? '' : ' notificationContentHidden'
-                }`}
-              />
-              <span className="targetUser">{i}</span>
-            </>
+            <span
+              className={`targetUser${i === item.manager ? ' manager' : ''}`}
+            >
+              {i}
+            </span>
           ))}
         </div>
       </div>
