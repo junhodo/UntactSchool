@@ -29,7 +29,7 @@ public class MemberApiController {
         return new SuccessResponse(200,"ok", id);
     }
 
-    @ApiOperation(value = "사용자 등록")
+    @ApiOperation(value = "로그인")
     @PostMapping("/api/v1/signin")
     public SuccessResponse signIn(@ApiParam("사용자 로그인") @Valid @RequestBody MemberSignInDto.Request memberSignUpRequest){
         String token = memberSignUseCase.signIn(memberSignUpRequest);
@@ -39,7 +39,7 @@ public class MemberApiController {
 
     @ApiOperation(value = "사용자 조회")
     @GetMapping("/api/v1/member/{id}")
-    public SuccessResponse readMember(@ApiParam("사용자 정보 조회") @PathVariable(value = "id") Long id){
+    public SuccessResponse readMember(@ApiParam(value = "사용자 정보 조회", example = "1") @PathVariable(value = "id") Long id){
         Member member = memberReadUseCase.read(id);
         MemberReadDto.Response res = MemberReadDto.Response.builder()
                 .memberId(member.getMemberId())
