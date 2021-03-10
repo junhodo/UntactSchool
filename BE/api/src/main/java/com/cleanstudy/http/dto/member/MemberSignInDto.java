@@ -1,15 +1,26 @@
 package com.cleanstudy.http.dto.member;
 
 import com.cleanstudy.http.dto.common.SuccessResponse;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import io.swagger.annotations.ApiModel;
+import lombok.*;
+
+import javax.validation.constraints.NotEmpty;
 
 public class MemberSignInDto {
 
     @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
+    @ToString
+    @ApiModel("로그인 요청")
+    @JsonInclude(JsonInclude.Include.ALWAYS)
+    @EqualsAndHashCode
     public static class Request{
+        @NotEmpty
         String id;
+
+        @NotEmpty
         String pw;
     }
 

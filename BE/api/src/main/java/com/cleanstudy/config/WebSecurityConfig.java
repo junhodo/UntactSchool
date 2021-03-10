@@ -39,8 +39,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().hasRole("MEMBER")
                 .and()
                 .addFilterBefore(new JwtAuthenticationFilters(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class);
-
-
     }
 
     @Override
