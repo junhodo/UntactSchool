@@ -173,9 +173,7 @@ const Report = () => {
       </div>
       <div
         className={`notificationContent${
-          { willShow }.willShow === Number(item.id)
-            ? ''
-            : ' notificationContentHidden'
+          { willShow }.willShow === Number(item.id) ? ' notificationShow' : ''
         }
         }`}
       >

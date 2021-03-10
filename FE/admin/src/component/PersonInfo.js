@@ -121,7 +121,7 @@ const PersonInfo = () => {
   };
 
   const userMaker = (
-    <div className={userMakeMode ? '' : 'notificationContentHidden'}>
+    <div className={userMakeMode ? '' : ' notificationContentHidden'}>
       <Form className="noteWriter">
         <div className="messageTargetBox needMargin">
           <span>아이디</span>
@@ -171,7 +171,7 @@ const PersonInfo = () => {
       </div>
       <div
         className={`notificationContent${
-          { willShow }.willShow === item.id ? '' : ' notificationContentHidden'
+          { willShow }.willShow === item.id ? ' notificationShow' : ''
         }
         }`}
       >

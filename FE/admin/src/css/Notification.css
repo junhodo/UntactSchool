@@ -1,17 +1,24 @@
 .notificationContent {
   width: auto;
+  max-height: 0;
   margin: 4px;
   margin-top: 0;
   padding: 2px;
-  border-top: 1px solid black;
-  visibility: visible;
   white-space:normal;
+  transition: 0.5s;
+  overflow-y: hidden;
+}
+
+.notificationShow {
+  max-height: 500px;
+  transition: 0.8s;
 }
 
 .notificationContentHidden {
   visibility: hidden;
   max-height: 0px;
 }
+
 
 .buttonBox {
   text-align: center;
@@ -103,3 +110,12 @@
   outline: none;
 }
 
+.userMakerBtn {
+  position: relative;
+  top: 5px;
+}
+
+.userMakeMode{
+  overflow: hidden;
+  max-height: 0;
+}
