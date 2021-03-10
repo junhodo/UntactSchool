@@ -1,13 +1,13 @@
 import React from 'react';
-import MenuList from './MenuList';
+import SidebarMenuList from './SidebarMenuList';
 import Profile from './Profile';
-import '../../../css/Sidebar.css';
+import '../../../css/shared/Sidebar/Sidebar.css';
 
 function Sidebar() {
   return (
     <div className="sidebar">
       <Profile />
-      <MenuList />
+      <SidebarMenuList />
     </div>
   );
 }
