@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../../css/MenuList.css';
+import '../../../css/shared/Sidebar/SidebarMenuList.css';
 import { OptionIcon, AddGroupIcon, LogoutIcon } from '../../../static/svg/icon';
 
 const data = [
@@ -20,7 +20,7 @@ const data = [
   }
 ];
 
-function MenuList() {
+function SidebarMenuList() {
   return (
     <div className="menuList">
       {data.map(e => (
@@ -33,4 +33,4 @@ function MenuList() {
   );
 }
 
-export default MenuList;
+export default SidebarMenuList;

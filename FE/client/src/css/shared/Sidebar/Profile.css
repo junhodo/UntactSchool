@@ -4,6 +4,10 @@
     box-shadow: 0 0 1px #222222;
 }
 
+.media {
+    align-items: center !important;
+}
+
 .profileIamge {
     display: inline;
     margin: 0;
@@ -13,7 +17,7 @@
     height: 100%;
     overflow: hidden;
     border-radius: 50%;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #eeeeee;
     background-color: #eeeeee;
 }
 

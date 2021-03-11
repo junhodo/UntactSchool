@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Media from 'react-bootstrap/Media';
-import '../../../css/Profile.css';
+import '../../../css/shared/Sidebar/Profile.css';
 import Pepe from '../../../static/image/alone_pepe.jpg';
 import { PersonIcon } from '../../../static/svg/icon';
 
@@ -8,12 +8,16 @@ function Profile() {
   const [image, setImage] = useState(null);
 
   const onChangeImage = () => {
+    console.log(image);
+    if (image) {
+      setImage(null);
+      return;
+    }
     setImage(Pepe);
   };
 
   useEffect(() => {
     onChangeImage();
-    console.log(image);
   }, []);
 
   return (
@@ -23,7 +27,7 @@ function Profile() {
           <button
             type="button"
             className="profileIamge"
-            onClick={() => setImage(null)}
+            onClick={onChangeImage}
           >
             {image ? <img src={image} alt="" /> : <PersonIcon />}
           </button>
