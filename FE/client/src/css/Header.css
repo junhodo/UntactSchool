@@ -1,0 +1,49 @@
+.Header {
+  margin-top: auto;
+  width: 100%;
+}
+
+.nav-link > a,
+.navbar-brand > a {
+  color: white;
+  text-decoration: none;
+}
+.nav-link > a:hover,
+.navbar-brand > a:hover {
+  color: pink;
+  text-decoration: none;
+}
+
+.iconWraper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 75px;
+  margin: 0 15px 0 15px;
+  padding-bottom: 1%;
+  height: 80px;
+}
+.iconWraper > img {
+  margin-right: 15px;
+  margin-left: 15px;
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.menuText {
+  font-size: 2rem;
+}
+
+.headerCol1 {
+  display: flex;
+  justify-content: flex-start;
+}
+.headerCol2 {
+  display: flex;
+  justify-content: center;
+}
+.headerCol3 {
+  display: flex;
+  justify-content: flex-end;
+}

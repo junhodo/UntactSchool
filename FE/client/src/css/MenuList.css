@@ -1,0 +1,29 @@
+.menuList {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    border-radius: .25rem;
+}
+
+.menuListItem {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    position: relative;
+    padding: 12px 12px 12px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+}
+
+.menuListItem > svg{
+    margin: 0 10px 0 0 ;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.menuListItem > h5{
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
