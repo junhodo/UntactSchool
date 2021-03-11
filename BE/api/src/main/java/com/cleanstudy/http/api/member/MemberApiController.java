@@ -47,7 +47,6 @@ public class MemberApiController {
                 .name(member.getName())
                 .dateBirth(member.getDateBirth())
                 .password(member.getPassword())
-                .authority(member.getAuthority())
                 .email(member.getEmail())
                 .memberId(member.getMemberId())
                 .nickname(member.getNickname())

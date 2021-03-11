@@ -1,10 +1,9 @@
 package com.cleanstudy.http.dto.member;
 
-import com.cleanstudy.domain.entity.member.MemberAuthority;
+import com.cleanstudy.domain.entity.member.MemberRole;
 import lombok.Builder;
 import lombok.Data;
 
-import javax.persistence.*;
 import java.time.LocalDate;
 
 public class MemberReadDto {
@@ -18,7 +17,7 @@ public class MemberReadDto {
         private String nickname;
         private String email;
         private String phoneNumber;
-        private MemberAuthority authority;
+        private MemberRole authority;
         private String name;
         private LocalDate dateBirth;
     }

@@ -1,8 +1,10 @@
 package com.cleanstudy.http.dto.member;
 
 import com.cleanstudy.http.dto.common.SuccessResponse;
+import com.cleanstudy.validator.annotation.MemberField;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 
 import javax.validation.constraints.NotEmpty;
@@ -17,11 +19,13 @@ public class MemberSignInDto {
     @JsonInclude(JsonInclude.Include.ALWAYS)
     @EqualsAndHashCode
     public static class Request{
-        @NotEmpty
-        String id;
+        @ApiModelProperty(example = "user")
+        @MemberField.AccountId
+        String accountId;
 
-        @NotEmpty
-        String pw;
+        @ApiModelProperty(example = "userpassword")
+        @MemberField.Password
+        String password;
     }
 
     @Data
