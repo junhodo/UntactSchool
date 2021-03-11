@@ -1,21 +1,15 @@
 package com.cleanstudy.http.dto.member;
 
-import com.cleanstudy.domain.entity.member.MemberAuthority;
+import com.cleanstudy.validator.annotation.MemberField;
 import com.cleanstudy.validator.annotation.Telephone;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.annotations.ApiParam;
 import lombok.*;
-import org.apache.tomcat.jni.Local;
-import org.springframework.context.annotation.Bean;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.*;
-import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 public class MemberSignUpDto {
 
@@ -27,26 +21,33 @@ public class MemberSignUpDto {
     @JsonInclude(JsonInclude.Include.ALWAYS)
     @EqualsAndHashCode
     public static class Request{
-        @NotEmpty
-        private String id;
 
-        @NotEmpty
+        @ApiModelProperty(example = "user")
+        @MemberField.AccountId
+        private String accountId;
+
+        @ApiModelProperty(example = "userpassword")
+        @MemberField.Password
         private String password;
 
-        @NotEmpty
+        @ApiModelProperty(example = "nickname")
+        @MemberField.NickName
         private String nickname;
 
+        @ApiModelProperty(example = "email@kumoh.ac.kr")
         @Email
-        @NotEmpty
         private String email;
 
-        @NotEmpty
+        @ApiModelProperty(example = "01012345678")
         @Telephone
         private String phoneNumber;
 
+        @ApiModelProperty(example = "umjunsick")
+        @MemberField.Name
         private String name;
 
-        @DateTimeFormat
+        @ApiModelProperty(example = "1992-05-05")
+        @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
         private LocalDate dateBirth;
     }
 }

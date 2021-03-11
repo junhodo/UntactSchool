@@ -2,7 +2,7 @@ package com.cleanstudy.domain.usecase.member;
 
 import com.cleanstudy.authentication.provider.JwtTokenProvider;
 import com.cleanstudy.domain.entity.member.Member;
-import com.cleanstudy.domain.entity.member.MemberAuthority;
+import com.cleanstudy.domain.entity.member.MemberRole;
 import com.cleanstudy.domain.usecase.UseCase;
 import com.cleanstudy.http.dto.member.MemberSignInDto;
 import com.cleanstudy.http.dto.member.MemberSignUpDto;
@@ -24,10 +24,9 @@ public class MemberSignUseCase {
     public long signUp(MemberSignUpDto.Request memberSignUpRequest){
         System.out.println(memberSignUpRequest.getPassword());
         Member member = Member.builder()
-                .accountId(memberSignUpRequest.getId())
+                .accountId(memberSignUpRequest.getAccountId())
                 .password(passwordEncoder.encode(memberSignUpRequest.getPassword()))
-                .authority(MemberAuthority.ROLE_MEMBER)
-                .roles(Collections.singletonList(MemberAuthority.ROLE_MEMBER.toString()))
+                .roles(Collections.singletonList(MemberRole.ROLE_MEMBER.toString()))
                 .dateBirth(memberSignUpRequest.getDateBirth())
                 .name(memberSignUpRequest.getName())
                 .email(memberSignUpRequest.getEmail())
@@ -39,8 +38,8 @@ public class MemberSignUseCase {
     }
 
     public String signIn(MemberSignInDto.Request memberSignUpRequest) {
-        Member member = memberJpaRepository.findByAccountId(memberSignUpRequest.getId()).get();
-        if(!passwordEncoder.matches(memberSignUpRequest.getPw(), member.getPassword()))
+        Member member = memberJpaRepository.findByAccountId(memberSignUpRequest.getAccountId()).get();
+        if(!passwordEncoder.matches(memberSignUpRequest.getPassword(), member.getPassword()))
             return "dasdas";
         return jwtTokenProvider.createToken(String.valueOf(member.getMemberId()), member.getRoles());
     }
