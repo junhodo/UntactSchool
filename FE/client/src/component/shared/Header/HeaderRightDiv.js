@@ -5,7 +5,7 @@ import userIcon from '../../../static/image/user.png';
 import SearchBar from './SearchBar';
 import SidebarIcon from '../Sidebar/SidebarIcon';
 import '../../../css/shared/Header/HeaderRightDiv.css';
-import '../../../css/SidebarIcon.css';
+import '../../../css/shared/Sidebar/SidebarIcon.css';
 
 const HeaderRightDiv = () => {
   const [showSearchBar, setShowSearchBar] = useState(false);

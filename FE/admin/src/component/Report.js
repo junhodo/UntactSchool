@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from 'react';
 import { Toast, ToastHeader, Form, Input, Button } from 'reactstrap';
-import '../css/Report.css';
+import '../css/Notification.css';
 
 const Report = () => {
   const [willShow, setWillShow] = useState(0);
@@ -173,9 +173,7 @@ const Report = () => {
       </div>
       <div
         className={`notificationContent${
-          { willShow }.willShow === Number(item.id)
-            ? ''
-            : ' notificationContentHidden'
+          { willShow }.willShow === Number(item.id) ? ' notificationShow' : ''
         }
         }`}
       >

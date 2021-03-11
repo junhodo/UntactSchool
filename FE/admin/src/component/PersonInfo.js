@@ -171,7 +171,7 @@ const PersonInfo = () => {
       </div>
       <div
         className={`notificationContent${
-          { willShow }.willShow === item.id ? '' : ' notificationContentHidden'
+          { willShow }.willShow === item.id ? ' notificationShow' : ''
         }
         }`}
       >
