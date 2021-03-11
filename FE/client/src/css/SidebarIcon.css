@@ -1,0 +1,15 @@
+.sidebarIconWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebarBtn {
+    margin: 0 15px;
+    display: inline-block;
+    border: none;
+    background-color: #343A40;
+    border-radius: 50%;
+    color: white;
+    padding: 0;
+}
