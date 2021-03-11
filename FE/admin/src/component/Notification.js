@@ -1,6 +1,6 @@
 import { React, useState } from 'react';
 import '../css/Notification.css';
-import { Toast, ToastHeader, Form, Input, Button } from 'reactstrap';
+import { Toast, ToastHeader, Form, Input, Button, Label } from 'reactstrap';
 
 const Notification = () => {
   const [willShow, setWillShow] = useState(0);
@@ -208,6 +208,9 @@ const Notification = () => {
             onChange={targetChange}
             onKeyPress={targetChange}
           />
+          <Label check>
+            <Input type="checkbox" /> 전체전송
+          </Label>
         </div>
         <div className="targetUserList">{targetUserList}</div>
         <div className="toastMargin needMargin">
