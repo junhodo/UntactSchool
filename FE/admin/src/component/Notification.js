@@ -93,6 +93,11 @@ const Notification = () => {
     }
   };
 
+  const noteReceiverdUser = event => {
+    event.preventDefault();
+    console.log(event.currentTarget.id);
+  };
+
   const noteChange = e => {
     setNoteSave(e.target.value);
     const ta = e.target;
@@ -168,10 +173,23 @@ const Notification = () => {
     // 새로추가한게  위로 가야 하는데 concat은 뒤로만 보내고 unshift 는 에러가 난다.
   };
 
+  const targetClicked = item => {
+    console.log(item);
+  };
+
   const notificationItem = dummy.map(item => (
-    <Toast onClick={notificationClick} id={item.id}>
-      <ToastHeader>{item.title}</ToastHeader>
-      <div className="itemContent">
+    <Toast>
+      <ToastHeader onClick={notificationClick} id={item.id}>
+        {item.title}
+      </ToastHeader>
+      <div
+        className="itemContent noneBorder"
+        onClick={notificationClick}
+        id={item.id}
+        role="button"
+        tabIndex={0}
+        onKeyPress={notificationClick}
+      >
         <span>{item.sender}</span>
         <span>{item.time}</span>
       </div>
@@ -184,19 +202,47 @@ const Notification = () => {
         <div className="receiver">
           <span className="flexWrap">
             {item.receiver.map(i => (
-              <span className="targetUser">{i}</span>
+              <span
+                className="targetUser noneBorder"
+                onClick={noteReceiverdUser}
+                id={i}
+                role="button"
+                tabIndex={0}
+                onKeyPress={noteReceiverdUser}
+              >
+                {i}
+              </span>
             ))}
           </span>
         </div>
-        {item.content}
+        <div
+          className="noneBorder upperBorder"
+          onClick={notificationClick}
+          id={item.id}
+          role="button"
+          tabIndex={0}
+          onKeyPress={notificationClick}
+        >
+          {item.content}
+        </div>
       </div>
     </Toast>
   ));
 
   const targetUserList = targetUser.map(item => (
-    <span className="targetUser">{item}</span>
+    <span
+      role="button"
+      tabIndex={0}
+      className="targetUser"
+      onClick={targetClicked(item)}
+      onKeyPress={targetClicked(item)}
+    >
+      {item}
+    </span>
   ));
-
+  /// span 을 클릭해도 console 이 찍히지 않는다 onClick notificationClick 이 Toast 전체에
+  /// 쓰여서 span 도 거기에 따르기 때문인거 같다. notificationClick 을 span 을 제외한 요소들에
+  /// 따로 설정해주면 될듯하다
   const messageMaker = (
     <div className={noteWriteMode ? '' : 'notificationContentHidden'}>
       <Form className="noteWriter">
@@ -208,6 +254,8 @@ const Notification = () => {
             onChange={targetChange}
             onKeyPress={targetChange}
           />
+        </div>
+        <div className="needMargin">
           <Label check>
             <Input type="checkbox" /> 전체전송
           </Label>
