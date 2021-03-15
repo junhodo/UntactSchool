@@ -6,6 +6,7 @@ const Notification = () => {
   const [willShow, setWillShow] = useState(0);
   const [noteSave, setNoteSave] = useState('');
   const [noteWriteMode, setNoteWriteMode] = useState(false);
+  const [sendAll, setSendAll] = useState(false);
   //  title  sender  receiver  time  content  id
   const [dummy, setDummy] = useState([
     {
@@ -174,8 +175,24 @@ const Notification = () => {
   };
 
   const targetClicked = item => {
+    // const deleteTargetUser = targetUser.filter(i => i !== item);
+
+    // setTargetUser(deleteTargetUser);
     console.log(item);
   };
+
+  const sendAllChecked = e => {
+    setSendAll(prev => !prev);
+    setTargetUser([]);
+    if (e.target.checked) {
+      setTargetUser(['전체전송']);
+    }
+  };
+
+  const emptyFunction = () => {
+    console.log();
+  };
+  /// /// 위에는 함수 밑으로는 jsp
 
   const notificationItem = dummy.map(item => (
     <Toast>
@@ -233,20 +250,22 @@ const Notification = () => {
     <span
       role="button"
       tabIndex={0}
-      className="targetUser"
+      className="targetUser noneBorder"
       onClick={targetClicked(item)}
-      onKeyPress={targetClicked(item)}
+      onKeyPress={emptyFunction}
     >
       {item}
     </span>
   ));
-  /// span 을 클릭해도 console 이 찍히지 않는다 onClick notificationClick 이 Toast 전체에
-  /// 쓰여서 span 도 거기에 따르기 때문인거 같다. notificationClick 을 span 을 제외한 요소들에
-  /// 따로 설정해주면 될듯하다
+
   const messageMaker = (
     <div className={noteWriteMode ? '' : 'notificationContentHidden'}>
       <Form className="noteWriter">
-        <div className="messageTargetBox needMargin">
+        <div
+          className={`messageTargetBox needMargin${
+            sendAll === true ? ' notificationContentHidden' : ''
+          }`}
+        >
           <span>전송대상</span>
           <Input
             type="text"
@@ -257,7 +276,7 @@ const Notification = () => {
         </div>
         <div className="needMargin">
           <Label check>
-            <Input type="checkbox" /> 전체전송
+            <Input type="checkbox" onChange={sendAllChecked} /> 전체전송
           </Label>
         </div>
         <div className="targetUserList">{targetUserList}</div>
