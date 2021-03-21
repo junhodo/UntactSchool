@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Main from '../group/Main/Main';
+import MyPage from '../my/MyPage/MyPage';
 import '../../css/Main.css';
 
 const MainRouter = () => {
@@ -12,7 +13,9 @@ const MainRouter = () => {
         <Route path="/group">
           <Main />
         </Route>
-        <Route path="/my" />
+        <Route path="/my">
+          <MyPage />
+        </Route>
       </Switch>
     </div>
   );

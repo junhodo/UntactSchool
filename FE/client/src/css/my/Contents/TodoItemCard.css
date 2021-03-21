@@ -1,0 +1,24 @@
+.todoItemCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    padding: 12px 5%;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: 0.5em;
+    margin: 5px 0;
+    box-shadow: .3px .3px .3px .3px rgba(0, 0, 0, .125);
+}
+
+.todoItem > h5{
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.todoItem > li{
+    margin: 0;
+    font-size: 0.7rem;
+    list-style:none;
+}

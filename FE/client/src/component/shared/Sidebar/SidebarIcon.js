@@ -8,11 +8,11 @@ function SidebarIcon() {
     setIsOpen(!isOpen);
     if (isOpen) {
       document.getElementsByClassName('main')[0].style.marginRight = '0px';
-      document.getElementsByClassName('sidebar')[0].style.width = '0';
+      document.getElementsByClassName('sidebar')[0].style.right = '-17%';
       return;
     }
     document.getElementsByClassName('main')[0].style.marginRight = '17%';
-    document.getElementsByClassName('sidebar')[0].style.width = '17%';
+    document.getElementsByClassName('sidebar')[0].style.right = '0';
   };
 
   return (
@@ -28,9 +28,3 @@ function SidebarIcon() {
 }
 
 export default SidebarIcon;
-
-// import PropTypes from 'prop-types';
-// SidebarIcon.propTypes = {
-//     isOpen: PropTypes.bool.isRequired,
-//     onChangeIsOpen: PropTypes.func.isRequired
-//   };

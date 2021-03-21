@@ -1,0 +1,41 @@
+.contentWrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    border-radius: .25rem;
+    width: 25%;
+    height: 80%;
+    margin: 0 30px;
+    padding: 5px;
+    background-color: #e0e0e0;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.8em;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px gray;
+}
+
+.contentTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 10px;
+}
+
+.contentTitle >h5 {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.addBtn {
+    display: inline-block;
+    border: none;
+    background-color: inherit;
+    border-radius: 50%;
+    padding: 0;
+}
+
+/* 
+.addBtn : {
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.5s;
+} */
